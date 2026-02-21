@@ -1,4 +1,4 @@
-from typing import List, Tuple, TextIO
+from typing import List, Tuple
 from abc import ABC, abstractmethod
 import math
 import json
@@ -74,27 +74,27 @@ class Network:
                 for j in range(layers[ind-1]):
                     self._weights[ind-1][i].append(random.uniform(-5, 5))
 
-    def set_weights(self, weights: List[List[List[float]]]):
+    def _set_weights(self, weights: List[List[List[float]]]):
         self._weights = weights
 
-    def set_biases(self, biases: List[List[float]]):
+    def _set_biases(self, biases: List[List[float]]):
         self._biases = biases
 
     @classmethod
-    def load_model(cls, file: TextIO, wrapper: Wrapper):
-        options = json.loads(file.read())
+    def load_model(cls, path: str, wrapper: Wrapper):
+        options = json.loads(open(path, 'r').read())
         instance = cls(options['layers'], wrapper)
-        instance.set_weights(options['weights'])
-        instance.set_biases(options['biases'])
+        instance._set_weights(options['weights'])
+        instance._set_biases(options['biases'])
         return instance
 
-    def save_model(self, name: str):
+    def save_model(self, path: str):
         model_info = {
             'layers': self._layers,
             'weights': self._weights,
             'biases': self._biases,
         }
-        with open(f'{name}.json', 'w') as file:
+        with open(path, 'w') as file:
             file.write(json.dumps(model_info))
                         
     def _calculate_weighted_sums_and_activations(self, activations: List[float]) -> Tuple[List[List[float]], List[List[float]]]:
