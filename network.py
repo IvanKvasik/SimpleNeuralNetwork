@@ -18,9 +18,6 @@ def multiply_matrix_by_vector(matrix: List[List[float]], vector: List[float]) ->
         result.append(val)
         
     return result
-    
-def fill_vector_to_needed_length(vector: List[float], length: int) -> List[float]:
-    return vector + [0]*(length - len(vector))
 
 def add_vectors(vector1: List[float], vector2: List[float]) -> List[float]:
     lv1 = len(vector1)
