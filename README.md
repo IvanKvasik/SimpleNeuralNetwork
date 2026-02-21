@@ -1,5 +1,5 @@
 # SimpleNeuralNetwork
-A simple class for basic neural networks without dependencies in Python.
+A simple implementation of basic neural networks without dependencies in Python
 ## Usage
 ### Network class
 The constructor accepts following parameters:
