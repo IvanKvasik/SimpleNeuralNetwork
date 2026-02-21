@@ -5,6 +5,8 @@ A simple implementation of basic neural networks without dependencies in Python
 The constructor accepts following parameters:
 1. ```layers``` — a list of integers describing every layer of your network
 2. ```wrapper``` — an instance of a ```Wrapper``` child class
+
+
 You may load an existing model from a JSON-file using the ```load_model``` class method that accepts ```path```, the path to the model file, and ```wrapper```
 #### Methods:
 1. ```train(self, dataset, learning_rate, epochs, validation, patience, batch_size)```
