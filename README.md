@@ -25,4 +25,4 @@ An abstract class used for easily defining external activation functions requiri
 1. ```function(self, x: float) -> float``` — the actual function
 2. ```derivative(self, x: float) -> float``` — the function's derivative
 
-Two basic ```Wrapper``` classes ```Sigmoid``` and ```Linear``` are implemented from the box.
+Two basic ```Wrapper``` classes ```Sigmoid``` and ```Linear``` are available from the box.
