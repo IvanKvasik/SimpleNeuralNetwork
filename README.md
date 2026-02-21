@@ -18,7 +18,9 @@ You may load an existing model from a JSON-file using the ```load_model``` class
     6. ```batch_size``` *(optional)* — an integer
 2. ```get_answer(self, input_data)```
     1. ```input_data``` — a list of float numbers
-    Returns a list of float numbers — calculated answer
+ 
+
+    Returns a list of float numbers — the calculated answer
 3. ```save_model(self, path)```
     1. ```path``` — the path to save the file
 
